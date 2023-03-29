@@ -1,4 +1,4 @@
 module.exports = {
-  '*': 'npm run build',
+  '*': 'npm run start',
   '*.ts': ['npm run format', 'npm run lint'],
 };
