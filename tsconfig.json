@@ -17,5 +17,18 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@auth/*": ["src/auth/*"],
+      "@config/*": ["src/config/*"],
+      "@decorators/*": ["src/common/decorators/*"],
+      "@filters/*": ["src/common/filters/*"],
+      "@guards/*": ["src/common/guards/*"],
+      "@middlewares/*": ["src/common/middlewares/*"],
+      "@models/*": ["src/models/*"],
+      "@pipes/*": ["src/common/pipes/*"],
+      "@providers/*": ["src/providers/*"],
+      "@serializers/*": ["src/common/serializers/*"],
+      "@shared/*": ["src/shared/*"],
+    }
   }
 }
