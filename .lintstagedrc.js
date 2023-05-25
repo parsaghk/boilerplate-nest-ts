@@ -1,4 +1,7 @@
 module.exports = {
-  '*.ts': ['npm run format', 'npm run lint'],
+  '*.ts': [
+    (filenames) => `yarn prettier --write ${filenames.join(' ')}`,
+    (filenames) => `yarn eslint --fix ${filenames.join(' ')}`,
+  ],
   '*': 'npm run build',
 };
