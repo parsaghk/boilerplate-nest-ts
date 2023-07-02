@@ -20,16 +20,7 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      [
-        'auth',
-        'base',
-        'common',
-        'config',
-        'database',
-        'models',
-        'providers',
-        'shared',
-      ],
+      ['auth', 'common', 'config', 'database', 'models', 'providers', 'shared'],
     ],
   },
 };

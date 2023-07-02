@@ -8,7 +8,6 @@
   },
   "moduleNameMapper": {
     "^@auth(.*)$": "<rootDir>/src/auth$1",
-    "^@base(.*)$": "<rootDir>/src/base$1",
     "^@config(.*)$": "<rootDir>/src/config$1",
     "^@common(.*)$": "<rootDir>/src/common$1",
     "^@models(.*)$": "<rootDir>/src/models$1",
