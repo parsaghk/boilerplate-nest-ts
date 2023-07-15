@@ -11,7 +11,7 @@ import { appConfiguration } from './app-configuration';
       load: [appConfiguration],
       expandVariables: true,
       validationSchema: Joi.object({
-        APP_ENV: Joi.string()
+        NODE_ENV: Joi.string()
           .required()
           .valid(...Object.values(AppEnvEnum)),
         APP_PORT: Joi.number().required(),
