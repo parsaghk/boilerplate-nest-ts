@@ -1,5 +1,6 @@
 export enum AppEnvEnum {
-  DEV = 'DEV',
-  STAGE = 'STAGE',
-  PRODUCTION = 'PRODUCTION',
+  DEV = 'dev',
+  STAGE = 'stage',
+  PRODUCTION = 'production',
+  TEST = 'test',
 }
