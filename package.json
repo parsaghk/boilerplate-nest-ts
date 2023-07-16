@@ -3,7 +3,6 @@
   "version": "1.3.0",
   "description": "Nestjs boiler plate",
   "author": "Parsa Ghadimkhani",
-  "private": true,
   "license": "UNLICENSED",
   "keywords": ["nestjs", "boiler-plate"],
   "scripts": {
