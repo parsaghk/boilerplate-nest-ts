@@ -25,4 +25,4 @@ async function bootstrap() {
   logger.log(`Swagger is running on ${appConfigService.url}/${swaggerPath}`);
 }
 
-bootstrap();
+bootstrap().catch(console.log);
