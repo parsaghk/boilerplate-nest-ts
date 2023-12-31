@@ -1,16 +1,33 @@
 import { SortEnum } from '@shared/enums';
-import { IsEnum, IsOptional } from 'class-validator';
+import { z } from 'zod';
 
 export class AbstractSortDto {
-  @IsOptional()
-  @IsEnum(SortEnum)
-  public readonly id?: SortEnum;
+  public id?: SortEnum;
 
-  @IsOptional()
-  @IsEnum(SortEnum)
-  public readonly createdAt?: SortEnum;
+  public createdAt?: SortEnum;
 
-  @IsOptional()
-  @IsEnum(SortEnum)
-  public readonly updatedAt?: SortEnum;
+  public updatedAt?: SortEnum;
+
+  public constructor({
+    id,
+    createdAt,
+    updatedAt,
+  }: {
+    id?: SortEnum;
+    createdAt?: SortEnum;
+    updatedAt?: SortEnum;
+  }) {
+    this.id = id;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+    AbstractSortDto.constructorValidator().parse(this);
+  }
+
+  public static constructorValidator() {
+    return z.object({
+      id: z.nativeEnum(SortEnum).optional(),
+      createdAt: z.nativeEnum(SortEnum).optional(),
+      updatedAt: z.nativeEnum(SortEnum).optional(),
+    });
+  }
 }

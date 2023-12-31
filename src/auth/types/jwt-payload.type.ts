@@ -1,6 +1,12 @@
 import { EntityId } from '@shared/types';
 
-export type JwtPayload = {
-  sub: EntityId;
-  securityTimestamp: string;
-};
+export class JwtPayload {
+  public sub: EntityId;
+
+  public securityTimestamp: string;
+
+  public constructor(sub: string, securityTimestamp: string) {
+    this.sub = sub;
+    this.securityTimestamp = securityTimestamp;
+  }
+}
