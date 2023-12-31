@@ -6,22 +6,18 @@ export class AuthConfigService {
   public constructor(private readonly _configService: NestConfigService) {}
 
   public get accessTokenSecret(): string {
-    return this._configService.get<string>('auth.accessTokenSecret') as string;
+    return this._configService.getOrThrow<string>('auth.accessTokenSecret');
   }
 
   public get accessTokenExpiresIn(): string {
-    return this._configService.get<string>(
-      'auth.accessTokenExpiresIn',
-    ) as string;
+    return this._configService.getOrThrow<string>('auth.accessTokenExpiresIn');
   }
 
   public get refreshTokenSecret(): string {
-    return this._configService.get<string>('auth.refreshTokenSecret') as string;
+    return this._configService.getOrThrow<string>('auth.refreshTokenSecret');
   }
 
   public get refreshTokenExpiresIn(): string {
-    return this._configService.get<string>(
-      'auth.refreshTokenExpiresIn',
-    ) as string;
+    return this._configService.getOrThrow<string>('auth.refreshTokenExpiresIn');
   }
 }

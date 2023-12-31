@@ -2,7 +2,11 @@ import { AppConfigService } from '@config/app';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as dayjs from 'dayjs';
+import * as utc from 'dayjs/plugin/utc';
 import { AppModule } from './app.module';
+dayjs.extend(utc);
+dayjs.utc().format(); // 2019-03-06T09:11:55Z
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
@@ -21,4 +25,4 @@ async function bootstrap() {
   logger.log(`Swagger is running on ${appConfigService.url}/${swaggerPath}`);
 }
 
-bootstrap();
+bootstrap().catch(console.log);

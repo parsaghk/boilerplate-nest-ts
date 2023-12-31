@@ -7,7 +7,8 @@ module.exports = {
   },
   plugins: ['simple-import-sort', '@typescript-eslint/eslint-plugin'],
   extends: [
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/strict-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:prettier/recommended',
   ],
   root: true,
@@ -31,6 +32,7 @@ module.exports = {
         destructuredArrayIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

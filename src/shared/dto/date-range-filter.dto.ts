@@ -1,11 +1,20 @@
-import { IsDateString, IsOptional } from 'class-validator';
+import { z } from 'zod';
 
 export class DateRangeFilterDto {
-  @IsOptional()
-  @IsDateString()
   public readonly from?: string;
 
-  @IsOptional()
-  @IsDateString()
   public readonly to?: string;
+
+  public constructor({ from, to }: { from?: string; to?: string }) {
+    this.from = from;
+    this.to = to;
+    DateRangeFilterDto.constructorValidator().parse(this);
+  }
+
+  public static constructorValidator() {
+    return z.object({
+      from: z.string().datetime(),
+      to: z.string().datetime(),
+    });
+  }
 }

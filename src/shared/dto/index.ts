@@ -1,5 +1,6 @@
 export * from './abstract-entity.dto';
 export * from './abstract-filter.dto';
+export * from './abstract-request-dto';
 export * from './abstract-sort.dto';
 export * from './date-range-filter.dto';
 export * from './entity-list-response.dto';

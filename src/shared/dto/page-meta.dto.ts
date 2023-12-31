@@ -1,4 +1,5 @@
 import { PaginationDto } from '@shared/dto';
+import { z } from 'zod';
 
 export class PageMetaDto {
   public readonly page: number;
@@ -20,5 +21,17 @@ export class PageMetaDto {
     this.pageCount = Math.ceil(this.itemCount / this.take);
     this.hasPreviousPage = this.page > 1;
     this.hasNextPage = this.page < this.pageCount;
+    PageMetaDto.constructorValidator().parse(this);
+  }
+
+  public static constructorValidator() {
+    return z.object({
+      page: z.number(),
+      take: z.number(),
+      itemCount: z.number(),
+      pageCount: z.number(),
+      hasPreviousPage: z.boolean(),
+      hasNextPage: z.boolean(),
+    });
   }
 }

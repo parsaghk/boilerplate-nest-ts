@@ -1,14 +1,31 @@
-import { Type } from 'class-transformer';
-import { IsNumber, Min } from 'class-validator';
+import { z } from 'zod';
 
 export class PaginationDto {
-  @IsNumber()
-  @Min(1)
-  @Type(() => Number)
-  public readonly pageSize: number = 10;
+  public pageSize: number;
 
-  @IsNumber()
-  @Min(1)
-  @Type(() => Number)
-  public readonly pageIndex: number = 1;
+  public pageIndex: number;
+
+  public constructor({
+    pageIndex = 1,
+    pageSize = 10,
+  }: {
+    pageSize?: number;
+    pageIndex?: number;
+  }) {
+    this.pageIndex = pageIndex;
+    this.pageSize = pageSize;
+    PaginationDto.constructorValidator().parse(this);
+  }
+
+  public static constructorValidator() {
+    return z.object({
+      pageSize: z.number().min(1).optional().default(10),
+      pageIndex: z.number().min(1).optional().default(1),
+    });
+  }
+
+  public static fromJSON(json: JSON): PaginationDto {
+    const validJSON = this.constructorValidator().parse(json);
+    return new PaginationDto(validJSON);
+  }
 }
