@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.11.10
     version: 1.11.10
   joi:
-    specifier: ^17.9.2
-    version: 17.11.0
+    specifier: ^17.12.0
+    version: 17.12.0
   passport:
     specifier: ^0.6.0
     version: 0.6.0
@@ -4317,8 +4317,8 @@ packages:
     hasBin: true
     dev: true
 
-  /joi@17.11.0:
-    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
+  /joi@17.12.0:
+    resolution: {integrity: sha512-HSLsmSmXz+PV9PYoi3p7cgIbj06WnEBNT28n+bbBNcPZXZFqCzzvGqpTBPujx/Z0nh1+KNQPDrNgdmQ8dq0qYw==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
